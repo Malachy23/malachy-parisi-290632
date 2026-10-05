@@ -1,0 +1,15 @@
+A1. A new command would need to:
+    1. Have its signature added to VALID_COMMANDS
+    2. Having defined a new method 'new_cmd(tokens)' in the same style as all the others.
+    3. Having it called in Metro.dispatch()
+    So, not counting (2), adding a new command only requires to add 3 lines of code, which seems good enough.
+
+A2. Ticket prices only depends on Metro._trip_price(), which now determines
+    prices based on 'trips_done_so_far'. So changing price policies won't affect much of my code
+    since it's contained in a method isolated from the others.
+
+A3. I would use the command 'time' before calling 'python3 main.py ...', so we get the execution time.
+
+A4. The only repeating error messages are stored in Metro.INV_COMMAND and Metro.INV_STATION
+    so translating them in other languages only requires to change their initialization in the constructor.
+    For error messages that appear only once in the code, we would need to find them and change them.
